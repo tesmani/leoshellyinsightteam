@@ -1,0 +1,133 @@
+/* --- 1. CORE APPLICATION VIEWPORT WRAPPERS --- */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-viewport {
+  flex: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.page-header-spacing {
+  padding-top: 120px; /* Pushes page content comfortably down past the sticky header */
+}
+
+/* --- 2. HIGH-PERFORMANCE STICKY NAVBAR --- */
+.navbar {
+  background-color: rgba(15, 17, 26, 0.7); /* Reduced alpha to secure rich backdrop-blur transparency */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-line);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transform: translate3d(0, 0, 0); /* Forces GPU render context to resolve scroll stuttering */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme="light"] .navbar {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+/* --- 3. BRAND LOGO (FIXED ENGINE GRADIENTS) --- */
+.nav-brand {
+  font-size: 1.25rem;
+  font-weight: 800;
+  background-image: var(--brand-gradient);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* --- 4. NAVIGATION LINKS & ACTIONS --- */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-item {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted) !important;
+  cursor: pointer;
+  position: relative;
+  transition: var(--transition-smooth, all 0.3s ease);
+  box-shadow: none !important;
+  padding: 0.5rem 0 !important;
+}
+
+.nav-item:hover, 
+.nav-item.active {
+  color: var(--text-main) !important;
+}
+
+/* Clean, glowing active indicator line */
+.nav-item.active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--brand-gradient);
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--brand-primary);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* --- 5. GRID-BASED ARCHITECTURE FOOTER --- */
+.footer {
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-line);
+  padding: 4rem 0 2rem;
+  margin-top: 5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(2, 1fr);
+  gap: 4rem;
+  margin-bottom: 3rem;
+}
+
+/* --- 6. FLUID MOBILE ADAPTABILITY --- */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .nav-links {
+    display: none; /* Safely drops navigation items on narrow viewports for layout flow */
+  }
+}

@@ -1,0 +1,370 @@
+/* --- 1. LAYOUT SPACING CONSTANTS --- */
+.page-header-spacing {
+  padding-top: 8rem;
+  padding-bottom: 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* --- 2. PREMIUM HERO STYLING --- */
+.hero-section {
+  text-align: center;
+  padding: 6rem 0 7rem;
+}
+
+.hero-title {
+  font-family: var(--font-sans, inherit);
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+}
+
+.hero-gradient-text {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 680px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+}
+
+/* --- 3. COMMON PAGE HEADINGS --- */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3.5rem;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+/* --- 4. TRUST METRICS DASHBOARD (GRADIENT WASH) --- */
+.metrics-dashboard {
+  background: var(--brand-gradient); /* Gorgeous purple-to-magenta-pink wash */
+  border: none;
+  border-radius: 16px;
+  padding: 4rem 2rem;
+  margin-bottom: 7rem;
+  color: #ffffff;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 3rem;
+}
+
+.metric-node {
+  text-align: center;
+  position: relative;
+}
+
+.metric-value {
+  font-size: 3.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.metric-label {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+/* --- 5. VALUE PROPS & FEATURE GRID --- */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 7rem;
+}
+
+.feature-card {
+  background: var(--bg-surface);
+  border: 1px solid rgba(157, 38, 176, 0.08);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(157, 38, 176, 0.03), 0 1px 3px rgba(0, 0, 0, 0.01);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition-smooth, all 0.3s cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.feature-card:hover {
+  border-color: rgba(157, 38, 176, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(157, 38, 176, 0.1);
+}
+
+.feature-badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--brand-primary);
+  background: var(--brand-primary-glow, rgba(157, 38, 176, 0.1));
+  border-radius: 50px;
+  margin-bottom: 1.25rem;
+}
+
+.feature-heading {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+.feature-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* --- 6. PREMIUM TESTIMONIALS LAYOUT --- */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  margin-bottom: 7rem;
+}
+
+.testimonial-card {
+  background: var(--bg-surface);
+  border: 1px solid rgba(157, 38, 176, 0.08);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(157, 38, 176, 0.02);
+  position: relative;
+}
+
+.testimonial-quote {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  line-height: 1.65;
+}
+
+.testimonial-author {
+  font-size: 0.9rem;
+  color: var(--brand-primary);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* --- 7. FINAL CONVERSION BANNER --- */
+.cta-banner {
+  background: var(--brand-gradient);
+  border: none;
+  border-radius: 16px;
+  padding: 4.5rem 2rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.cta-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.cta-desc {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 580px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.05rem;
+}
+
+/* --- 8. INFINITE HORIZONTAL MARQUEE --- */
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: marqueeContinuous 30s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeContinuous {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* --- 9. PLATFORM CATEGORY GRID LAYOUT --- */
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 6rem;
+}
+
+.platform-node {
+  background: var(--bg-surface);
+  border: 1px solid rgba(157, 38, 176, 0.08);
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+  transition: var(--transition-smooth, all 0.3s ease);
+}
+
+.platform-node:hover {
+  border-color: var(--brand-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px var(--brand-primary-glow, rgba(157, 38, 176, 0.15));
+}
+
+.platform-icon-frame {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: rgba(157, 38, 176, 0.05);
+  border: 1px solid rgba(157, 38, 176, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--brand-primary);
+}
+
+/* --- 10. STEALTH CONTROLS --- */
+.stealth-gatekeeper {
+  display: inline-block;
+  opacity: 0.15;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  cursor: default;
+  user-select: none;
+  transition: opacity 0.2s ease;
+  margin-left: 6px;
+}
+
+.stealth-gatekeeper:hover {
+  opacity: 0.8;
+  color: var(--brand-secondary);
+  cursor: pointer;
+}
+
+/* --- 11. SERVICES & PRICING COMPONENTS --- */
+hr {
+  border: none;
+  border-top: 1px solid var(--border-line);
+  margin: 4rem 0;
+}
+
+.platform-chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.platform-chip {
+  background: var(--bg-surface);
+  border: 1px solid rgba(157, 38, 176, 0.1);
+  color: var(--text-main);
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(157, 38, 176, 0.02);
+  transition: var(--transition-smooth, all 0.3s ease);
+}
+
+.platform-chip:hover {
+  border-color: var(--brand-secondary);
+  box-shadow: 0 4px 12px var(--brand-primary-glow, rgba(157, 38, 176, 0.15));
+  transform: translateY(-1px);
+}
+
+/* Package Switcher Tab Styling */
+.tab-switcher-container {
+  display: inline-flex;
+  background: rgba(157, 38, 176, 0.05);
+  padding: 0.35rem;
+  border-radius: 50px;
+  border: 1px solid rgba(157, 38, 176, 0.1);
+  margin-bottom: 3rem;
+}
+
+.tab-btn {
+  background: transparent;
+  color: var(--text-main);
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth, all 0.3s ease);
+}
+
+.tab-btn.active {
+  background: var(--brand-primary);
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px var(--brand-primary-glow, rgba(157, 38, 176, 0.15));
+}
+
+/* Secondary CTA Buttons inside Pricing Cards */
+.feature-card .btn-secondary {
+  background: transparent !important;
+  border: 1.5px solid var(--brand-primary) !important;
+  color: var(--brand-primary) !important;
+  font-weight: 600;
+  padding: 0.85rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition-smooth, all 0.3s ease);
+}
+
+.feature-card .btn-secondary:hover {
+  background: var(--brand-primary) !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 20px var(--brand-primary-glow, rgba(157, 38, 176, 0.15));
+}
+
+/* --- 12. FLUID MEDIA COLLAPSE --- */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-actions {
+    flex-direction: column;
+  }
+}

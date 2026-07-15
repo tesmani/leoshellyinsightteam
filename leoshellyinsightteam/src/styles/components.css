@@ -1,0 +1,138 @@
+/* --- 1. ROW CONSTRAINERS --- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.page-header-spacing {
+  padding-top: 120px; /* Pushes page content perfectly below the fixed header */
+}
+
+/* --- 2. STICKY GLASSMORPHISM NAVBAR --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 75px;
+  background: rgba(10, 12, 16, 0.85); /* Premium deep dark translucent background */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(157, 38, 176, 0.15); /* Subtly tinted brand border */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- 3. STRATEGIC TYPOGRAPHY / LOGO --- */
+.nav-logo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+  user-select: none;
+}
+
+.nav-logo span {
+  background: linear-gradient(135deg, #9d26b0, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+}
+
+/* --- 4. NAVIGATION LINKS HUB --- */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Clears all browser default button frames beautifully */
+.nav-item {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 0 !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  box-shadow: none !important;
+}
+
+/* Hover State */
+.nav-item:hover {
+  color: #ffffff !important;
+}
+
+/* Underlying line transition setup */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #9d26b0, #ec4899);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* Active State & Glowing Accent Underline */
+.nav-item.active {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.nav-item.active::after {
+  width: 100%;
+  box-shadow: 0 0 8px #9d26b0;
+}
+
+/* --- 5. SYSTEM FOOTER LAYOUT --- */
+.app-footer {
+  text-align: center;
+  padding: 4rem 1rem;
+  border-top: 1px solid var(--border-line);
+  margin-top: 8rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* --- 6. MOBILE RESPONSIVE ADAPTABILITY --- */
+@media (max-width: 640px) {
+  .navbar {
+    height: 70px;
+  }
+  .nav-container {
+    padding: 0 1rem;
+  }
+  .nav-logo {
+    font-size: 1.15rem;
+  }
+  .nav-links {
+    gap: 1.25rem;
+  }
+  .nav-item {
+    font-size: 0.85rem;
+  }
+}
